@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA7D93131F9DC0AA0004EBF1 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7D93111F9DC0AA0004EBF1 /* Base.cpp */; };
+		EA7D93161F9DC1010004EBF1 /* exp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7D93141F9DC1010004EBF1 /* exp.cpp */; };
 		EACEB9901F99A414007E9D1D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EACEB98F1F99A414007E9D1D /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA7D93111F9DC0AA0004EBF1 /* Base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
+		EA7D93121F9DC0AA0004EBF1 /* Base.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Base.hpp; sourceTree = "<group>"; };
+		EA7D93141F9DC1010004EBF1 /* exp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = exp.cpp; sourceTree = "<group>"; };
+		EA7D93151F9DC1010004EBF1 /* exp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = exp.hpp; sourceTree = "<group>"; };
 		EACEB98C1F99A414007E9D1D /* demo2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = demo2; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACEB98F1F99A414007E9D1D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				EACEB98F1F99A414007E9D1D /* main.cpp */,
+				EA7D93111F9DC0AA0004EBF1 /* Base.cpp */,
+				EA7D93121F9DC0AA0004EBF1 /* Base.hpp */,
+				EA7D93141F9DC1010004EBF1 /* exp.cpp */,
+				EA7D93151F9DC1010004EBF1 /* exp.hpp */,
 			);
 			path = demo2;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7D93161F9DC1010004EBF1 /* exp.cpp in Sources */,
+				EA7D93131F9DC0AA0004EBF1 /* Base.cpp in Sources */,
 				EACEB9901F99A414007E9D1D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
