@@ -10,9 +10,16 @@
 #define exp_hpp
 #include "Base.hpp"
 
+
+
 class exp:public Base
 {
+protected:
+    node analy_string[100];
     
+    
+public:
+    void preexcute();
 };
 
 #endif /* exp_hpp */

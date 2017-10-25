@@ -6,10 +6,16 @@
 //  Copyright © 2017年 zhang Alex. All rights reserved.
 //
 
-#include <iostream>
+#include "exp.hpp"
+#include "Base.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main(int argc, const char * argv[])
+{
+    class exp a;
+//    class Base b;
+//    b.inputAndSolve();
+//    b.display();
+    a.inputAndSolve();
+    a.preexcute();
     return 0;
 }

@@ -30,7 +30,7 @@ struct node
 };
 
 class Base
-{
+{    
 protected:
     int T;
     node analy_str[100]; //inputstring
