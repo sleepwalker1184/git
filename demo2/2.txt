@@ -1,0 +1,39 @@
+set0
+Z	S	0	#
+S	BB	0	#
+B	aB	0	ab
+B	b	0	ab
+
+set1
+B	aB	1	ab
+B	aB	0	ab
+B	b	0	ab
+
+set2
+B	b	1	ab
+
+set3
+Z	S	1	#
+
+set4
+S	BB	1	#
+B	aB	0	#
+B	b	0	#
+
+set5
+B	aB	2	ab
+
+set6
+B	aB	1	#
+B	aB	0	#
+B	b	0	#
+
+set7
+B	b	1	#
+
+set8
+S	BB	2	#
+
+set9
+B	aB	2	#
+
