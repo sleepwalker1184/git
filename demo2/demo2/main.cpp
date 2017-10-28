@@ -9,13 +9,17 @@
 #include "exp.hpp"
 #include "Base.hpp"
 
+
 int main(int argc, const char * argv[])
 {
     class exp a;
 //    class Base b;
 //    b.inputAndSolve();
-//    b.display();
+//    b.display();    
     a.inputAndSolve();
     a.preexcute();
+    a.MainControl();
+    a.display();
+    
     return 0;
 }

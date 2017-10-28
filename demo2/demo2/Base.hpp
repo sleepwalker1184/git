@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <cstring>
 #include <vector>
 #include <string>
@@ -44,8 +45,8 @@ protected:
 public:
     Base() :T(0){}
     bool isNotSymbol(char c);  //vn true vt false
-    int get_index(char target);//vt num
-    int get_nindex(char target);//vn num
+    int get_index(char target);//vn num
+    int get_nindex(char target);//vt num
     void get_first(char target);
     void get_follow(char target);
     void inputAndSolve();
