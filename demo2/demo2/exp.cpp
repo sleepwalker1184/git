@@ -73,7 +73,7 @@ string exp::CLOSUREexpect(char x1, string x2)
     if(x1=='$')
         ret=x2[0];
     else
-        if(x1>'a'&&x1<'z')
+        if(!(x1>'A'&&x1<'Z'))
             ret=x1;
         else
         {
@@ -106,7 +106,7 @@ void exp::CLOSURE(lr1set &x)
         while(isalpha(x.node[i].left))
         {
             int k=0;
-            if(x.node[i].right[x.node[i].dot]>'A'&&x.node[i].right[x.node[i].dot]<'Z')
+            if(x.node[i].right[x.node[i].dot]>='A'&&x.node[i].right[x.node[i].dot]<='Z')
             {
                 while(isalpha(analy_string[k].left))
                 {
@@ -116,20 +116,26 @@ void exp::CLOSURE(lr1set &x)
                         x.node[x.n].right=analy_string[k].right;
                         x.node[x.n].dot=0;
                         if(x.node[i].right[x.node[i].dot+1]!='\0')
-                        {
-//                            x.node[x.n].expect.resize(10);
                             x.node[x.n].expect=CLOSUREexpect(x.node[i].right[x.node[i].dot+1],x.node[i].expect);
-                        }
-                        
                         else
-                        {
-//                            x.node[x.n].expect.resize(10);
                             x.node[x.n].expect=x.node[i].expect;
+                        bool flag=0;
+                        for(int l=0;l<x.n;l++)
+                        {
+                            flag=false;
+                            if(x.node[l].left==x.node[x.n].left&&
+                               x.node[l].right==x.node[x.n].right&&
+                               x.node[l].expect==x.node[x.n].expect)
+                            {
+                                flag=true;
+                                break;
+                            }
                         }
-                        
-                        
-                        x.n++;
+                        if(!flag)
+                            x.n++;
                     }
+                    
+                    
                     k++;
                 }
             }
@@ -180,6 +186,7 @@ lr1set exp::GOTO(lr1set origin,char turn)
             tmpset.node[k].dot=origin.node[i].dot+1;
             tmpset.node[k].expect=origin.node[i].expect;
             tmpset.n++;
+            k++;
         }
     }
     return tmpset;
