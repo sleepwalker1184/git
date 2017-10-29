@@ -17,10 +17,18 @@ struct lr1node
     string expect;
 };
 
+struct listsign
+{
+    char turnalpha[10];
+    int turninto[10]={0,0,0,0,0,0,0,0,0,0};
+    int turnnum=0;
+};
+
 struct lr1set
 {
-    lr1node node[10];
+    lr1node node[20];
     int n=0;
+    listsign Listsign;
 };
 
 class exp:public Base
@@ -29,15 +37,20 @@ public:
     void preexcute();
     void display();
     void CLOSURE(lr1set &x);
-    lr1set GOTO(lr1set origin,char turn);
+    lr1set GOTO(lr1set &origin,char turn,int currentnum);
     void MainControl();
-    bool Judege(lr1set suspect,int currentsetnum);
+    void lr1list();
+    int Judege(lr1set suspect,int currentsetnum);
+    bool judgealpha(char x);
+    bool judegturn(lr1set x,int n);
+    int locate(char x,string y);
     string CLOSUREexpect(char x1,string x2);
     bool judgehelp(bool a[],int n);
     
 protected:
     lr1node analy_string[100];
     lr1set analy_set[20];
+    int analy_list[20][20];
 };
 
 #endif /* exp_hpp */

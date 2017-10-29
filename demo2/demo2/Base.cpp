@@ -47,6 +47,9 @@ void Base::get_first(char target)
                 first_set[get_index(target)].insert(analy_str[i].right[0]);
             }
             else
+                if(analy_str[i].right[0]==analy_str[i].left)
+                    continue;
+            else
             {
                 for (int j = 0; j<analy_str[i].right.length(); j++)
                 {

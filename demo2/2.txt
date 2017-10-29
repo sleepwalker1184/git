@@ -1,39 +1,63 @@
 set0
-Z	S	0	#
-S	BB	0	#
-B	aB	0	ab
-B	b	0	ab
+Z	L	0	#	(	1	L	2	P	3	
+L	LP	0	#	(	1	L	2	P	3	
+L	P	0	#	(	1	L	2	P	3	
+L	LP	0	(	(	1	L	2	P	3	
+L	P	0	(	(	1	L	2	P	3	
+P	(P)	0	#	(	1	L	2	P	3	
+P	()	0	#	(	1	L	2	P	3	
+P	(P)	0	(	(	1	L	2	P	3	
+P	()	0	(	(	1	L	2	P	3	
 
 set1
-B	aB	1	ab
-B	aB	0	ab
-B	b	0	ab
+P	(P)	1	#	(	4	)	5	P	6	
+P	()	1	#	(	4	)	5	P	6	
+P	(P)	1	(	(	4	)	5	P	6	
+P	()	1	(	(	4	)	5	P	6	
+P	(P)	0	)	(	4	)	5	P	6	
+P	()	0	)	(	4	)	5	P	6	
 
 set2
-B	b	1	ab
+Z	L	1	#	(	1	P	7	
+L	LP	1	#	(	1	P	7	
+L	LP	1	(	(	1	P	7	
+P	(P)	0	#	(	1	P	7	
+P	()	0	#	(	1	P	7	
+P	(P)	0	(	(	1	P	7	
+P	()	0	(	(	1	P	7	
 
 set3
-Z	S	1	#
+L	P	1	#	
+L	P	1	(	
 
 set4
-S	BB	1	#
-B	aB	0	#
-B	b	0	#
+P	(P)	1	)	(	4	)	8	P	9	
+P	()	1	)	(	4	)	8	P	9	
+P	(P)	0	)	(	4	)	8	P	9	
+P	()	0	)	(	4	)	8	P	9	
 
 set5
-B	aB	2	ab
+P	()	2	#	
+P	()	2	(	
 
 set6
-B	aB	1	#
-B	aB	0	#
-B	b	0	#
+P	(P)	2	#	)	10	
+P	(P)	2	(	)	10	
 
 set7
-B	b	1	#
+L	LP	2	#	
+L	LP	2	(	
 
 set8
-S	BB	2	#
+P	()	2	)	
 
 set9
-B	aB	2	#
+P	(P)	2	)	)	11	
+
+set10
+P	(P)	3	#	
+P	(P)	3	(	
+
+set11
+P	(P)	3	)	
 

@@ -20,6 +20,7 @@ int main(int argc, const char * argv[])
     a.preexcute();
     a.MainControl();
     a.display();
+    a.lr1list();
     
     return 0;
 }

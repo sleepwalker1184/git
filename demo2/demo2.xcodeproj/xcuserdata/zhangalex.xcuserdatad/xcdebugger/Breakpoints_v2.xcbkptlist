@@ -9,61 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo2/Base.cpp"
-            timestampString = "530874988.604344"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "Base::inputAndSolve()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Base::inputAndSolve()"
-                  moduleName = "demo2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangalex/Desktop/git/demo2/demo2/Base.cpp"
-                  timestampString = "530621049.200364"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "1552">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Base::inputAndSolve()"
-                  moduleName = "demo2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangalex/Desktop/git/demo2/demo2/Base.cpp"
-                  timestampString = "530621049.203615"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "1579">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.513"
+            timestampString = "530976105.26634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "exp::GOTO(lr1set origin,char turn)"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "exp::GOTO(lr1set &amp;origin,char turn,int currentnum)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,30 +24,14 @@
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
+            condition = "currentsetnum==10"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.513603"
+            timestampString = "530976105.267142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "exp::CLOSURE(lr1set &amp;x)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            condition = "l==4"
-            continueAfterRunningActions = "No"
-            filePath = "demo2/exp.cpp"
-            timestampString = "530892565.514058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "exp::MainControl()"
             landmarkType = "7">
          </BreakpointContent>
@@ -107,11 +43,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.514715"
+            timestampString = "530976105.267828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "exp::CLOSUREexpect(char x1, string x2)"
             landmarkType = "7">
          </BreakpointContent>
@@ -123,11 +59,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.515232"
+            timestampString = "530976105.268447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "exp::Judege(lr1set suspect,int currentsetnum)"
             landmarkType = "7">
          </BreakpointContent>
@@ -137,26 +73,9 @@
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
-            condition = "l==1"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.515702"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "exp::MainControl()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo2/exp.cpp"
-            timestampString = "530892565.516088"
+            timestampString = "530976105.269054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -172,11 +91,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.516533"
+            timestampString = "530976105.269652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "exp::judgehelp(bool a[],int n)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "demo2/exp.cpp"
+            timestampString = "530976105.270444"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "exp::preexcute()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "x.n==6"
+            continueAfterRunningActions = "No"
+            filePath = "demo2/exp.cpp"
+            timestampString = "530976105.271147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "exp::CLOSURE(lr1set &amp;x)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "demo2/exp.cpp"
+            timestampString = "530976105.271826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "exp::MainControl()"
             landmarkType = "7">
          </BreakpointContent>
@@ -188,12 +156,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
-            timestampString = "530892565.517083"
+            timestampString = "530976105.272415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "exp::judgehelp(bool a[],int n)"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "exp::CLOSURE(lr1set &amp;x)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "demo2/exp.cpp"
+            timestampString = "530976105.273022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "exp::MainControl()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "demo2/exp.cpp"
+            timestampString = "530976105.273564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "exp::lr1list()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "demo2/exp.cpp"
+            timestampString = "530976105.27408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
+            landmarkName = "exp::lr1list()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

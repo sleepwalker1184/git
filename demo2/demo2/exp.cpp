@@ -49,7 +49,13 @@ void exp::display()
             out<<analy_set[i].node[j].left<<"\t";
             out<<analy_set[i].node[j].right<<"\t";
             out<<analy_set[i].node[j].dot<<"\t";
-            out<<analy_set[i].node[j].expect<<"\n";
+            out<<analy_set[i].node[j].expect<<"\t";
+            for(int k=0;k<analy_set[i].Listsign.turnnum;k++)
+            {
+                out<<analy_set[i].Listsign.turnalpha[k]<<"\t";
+                out<<analy_set[i].Listsign.turninto[k]<<"\t";
+            }
+            out<<"\n";
         }
         out<<"\n";
         i++;
@@ -94,7 +100,13 @@ string exp::CLOSUREexpect(char x1, string x2)
     return ret;
 }
 
-
+bool exp::judgealpha(char x)
+{
+    if(x>='A'&&x<='Z')
+        return true;
+    else
+        return false;
+}
 
 void exp::CLOSURE(lr1set &x)
 {
@@ -103,7 +115,7 @@ void exp::CLOSURE(lr1set &x)
     while(x.n!=n)
     {
         n=x.n;
-        while(isalpha(x.node[i].left))
+        while(judgealpha(x.node[i].left))
         {
             int k=0;
             if(x.node[i].right[x.node[i].dot]>='A'&&x.node[i].right[x.node[i].dot]<='Z')
@@ -125,7 +137,8 @@ void exp::CLOSURE(lr1set &x)
                             flag=false;
                             if(x.node[l].left==x.node[x.n].left&&
                                x.node[l].right==x.node[x.n].right&&
-                               x.node[l].expect==x.node[x.n].expect)
+                               x.node[l].expect==x.node[x.n].expect&&
+                               x.node[l].dot==x.node[x.n].dot)
                             {
                                 flag=true;
                                 break;
@@ -144,7 +157,7 @@ void exp::CLOSURE(lr1set &x)
     }
 }
 
-bool exp::Judege(lr1set suspect,int currentsetnum)
+int exp::Judege(lr1set suspect,int currentsetnum)
 {
     bool flag[suspect.n];
     for(int i=0;i<suspect.n;i++)
@@ -167,13 +180,13 @@ bool exp::Judege(lr1set suspect,int currentsetnum)
                 }
             }
         if(judgehelp(flag,suspect.n))
-            return true;
+            return i;
     }
-    return false;
+    return 0;
 }
 
 
-lr1set exp::GOTO(lr1set origin,char turn)
+lr1set exp::GOTO(lr1set &origin,char turn,int currentnum)
 {
     int k=0;
     lr1set tmpset;
@@ -194,27 +207,33 @@ lr1set exp::GOTO(lr1set origin,char turn)
 
 
 
-
 void exp::MainControl()
 {
     CLOSURE(analy_set[0]);
     int currentsetnum=1;
-    int changenum=0;
+//    int changenum=0;
     lr1set tmpset;
-    while(currentsetnum!=changenum)
-    {
-        changenum=currentsetnum;
+//    while(currentsetnum!=changenum)
+//    {
+//        changenum=currentsetnum;
         for(int l=0;l<currentsetnum;l++)
         {
             for(int i=0;i<ter_copy.size();i++)
             {
                 if(ter_copy[i]!='#')
                 {
-                    analy_set[currentsetnum]=GOTO(analy_set[l], ter_copy[i]);
+                    analy_set[currentsetnum]=GOTO(analy_set[l], ter_copy[i],currentsetnum);
                     if(analy_set[currentsetnum].n>0)
                     {
                         CLOSURE(analy_set[currentsetnum]);
-                        if(!Judege(analy_set[currentsetnum], currentsetnum))
+                        int temp=Judege(analy_set[currentsetnum], currentsetnum);
+                        analy_set[l].Listsign.turnalpha[analy_set[l].Listsign.turnnum]=ter_copy[i];
+                        if(temp!=0)
+                            analy_set[l].Listsign.turninto[analy_set[l].Listsign.turnnum]=temp;
+                        else
+                            analy_set[l].Listsign.turninto[analy_set[l].Listsign.turnnum]=currentsetnum;
+                        analy_set[l].Listsign.turnnum++;
+                        if(temp==0)
                         {
                             currentsetnum++;
                         }
@@ -223,25 +242,92 @@ void exp::MainControl()
             }
             for(int i=0;i<non_colt.size();i++)
             {
-                analy_set[currentsetnum]=GOTO(analy_set[l], non_colt[i]);
+                analy_set[currentsetnum]=GOTO(analy_set[l], non_colt[i],currentsetnum);
                 if(analy_set[currentsetnum].n>0)
                 {
                     CLOSURE(analy_set[currentsetnum]);
-                    if(!Judege(analy_set[currentsetnum], currentsetnum))
+                    int temp=Judege(analy_set[currentsetnum], currentsetnum);
+                    analy_set[l].Listsign.turnalpha[analy_set[l].Listsign.turnnum]=non_colt[i];
+                    if(temp!=0)
+                        analy_set[l].Listsign.turninto[analy_set[l].Listsign.turnnum]=temp;
+                    else
+                        analy_set[l].Listsign.turninto[analy_set[l].Listsign.turnnum]=currentsetnum;
+                    analy_set[l].Listsign.turnnum++;
+                    if(temp==0)
                     {
+                        
                         currentsetnum++;
                     }
                 }
             }
         }
+//    }
+}
+
+int exp::locate(char x, string y)
+{
+    int i=0;
+    while(isalpha(analy_str[i].left))
+    {
+        if(analy_str[i].left==x&&analy_str[i].right==y)
+            return i;
+        i++;
     }
+    return -1;
 }
 
 
 
-
-
-
+void exp::lr1list()
+{
+    for(int i=0;i<20;i++)
+    {
+        for(int j=0;j<20;j++)
+            analy_list[i][j]=0;
+    }
+    int i=0;
+    while(analy_set[i].n>0)
+    {
+        for(int j=0;j<analy_set[j].n;j++)
+        {
+            if(analy_set[i].node[j].dot==analy_set[i].node[j].right.length())
+            {
+                for(int k=0;k<analy_set[i].node[j].expect.length();k++)
+                {
+                    analy_list[i][get_nindex(analy_set[i].node[j].expect[k])]=-(locate(analy_set[i].node[j].left, analy_set[i].node[j].right)+1);
+                }
+                
+            }
+        }
+        i++;
+    }
+    i=0;
+    while(analy_set[i].n>0)
+    {
+        if(analy_set[i].node[0].left=='Z'&&analy_set[i].node[0].dot==1)
+            analy_list[i][get_nindex('#')]=-999;
+            for(int j=0;j<analy_set[i].Listsign.turnnum;j++)
+            {
+                if(get_nindex(analy_set[i].Listsign.turnalpha[j])!=-1)
+                {
+                    analy_list[i][get_nindex(analy_set[i].Listsign.turnalpha[j])]=analy_set[i].Listsign.turninto[j];
+                }
+                else
+                {
+                    analy_list[i][get_index(analy_set[i].Listsign.turnalpha[j])+ter_copy.size()]=analy_set[i].Listsign.turninto[j];
+                }
+            }
+        i++;
+    }
+    
+    for(int i=0;i<12;i++)
+    {
+        cout<<i<<"\t";
+        for(int j=0;j<5;j++)
+            cout<<analy_list[i][j]<<" ";
+        cout<<"\n";
+    }
+}
 
 
 
