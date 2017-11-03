@@ -38,6 +38,7 @@ void exp::preexcute()
 
 void exp::display()
 {
+    cout.setf(std::ios::left);
     ofstream out;
     out.open("/Users/zhangalex/Desktop/git/demo2/2.txt");
     int i=0;
@@ -62,6 +63,49 @@ void exp::display()
     }
     
 }
+void exp::listdisplay()
+{
+    ofstream out;
+    out.open("/Users/zhangalex/Desktop/git/demo2/1.txt");
+    out.setf(std::ios::left);
+    int i=0;
+    out<<"status"<<"\t";
+    for(int k=0;k<ter_copy.size();k++)
+    {
+        out<<setw(2) <<ter_copy[k]<<"\t";
+    }
+    for(int k=0;k<non_colt.size();k++)
+    {
+        out<<setw(2) <<non_colt[k]<<"\t";
+    }
+    out<<"\n";
+    while(analy_set[i].n>0)
+    {
+        out<<setw(6)<<i<<"\t";
+        for(int j=0;j<ter_copy.size()+non_colt.size();j++)
+        {
+            if(analy_list[i][j]==0)
+            {
+                out<<setw(2)<<""<<"\t";
+            }
+            else if(analy_list[i][j]>0)
+            {
+                out<<"S"<<analy_list[i][j]<<"\t";
+            }
+            else if(analy_list[i][j]!=-999)
+            {
+                out<<"R"<<-(analy_list[i][j])<<"\t";
+            }
+            else
+            {
+                out<<"ACC"<<"   ";
+            }
+        }
+        out<<"\n";
+        i++;
+    }
+}
+
 
 bool exp::judgehelp(bool a[],int n)
 {
@@ -112,10 +156,10 @@ void exp::CLOSURE(lr1set &x)
 {
     int n=-1;
     int i=0;
-    while(x.n!=n)
+    while(1)
     {
         n=x.n;
-        while(judgealpha(x.node[i].left))
+        while(x.node[i].right.length())
         {
             int k=0;
             if(x.node[i].right[x.node[i].dot]>='A'&&x.node[i].right[x.node[i].dot]<='Z')
@@ -147,13 +191,13 @@ void exp::CLOSURE(lr1set &x)
                         if(!flag)
                             x.n++;
                     }
-                    
-                    
                     k++;
                 }
             }
             i++;
         }
+        if(x.n==n)
+            break;
     }
 }
 
@@ -320,16 +364,81 @@ void exp::lr1list()
         i++;
     }
     
-    for(int i=0;i<12;i++)
-    {
-        cout<<i<<"\t";
-        for(int j=0;j<5;j++)
-            cout<<analy_list[i][j]<<" ";
-        cout<<"\n";
-    }
+//    for(int i=0;i<12;i++)
+//    {
+//        cout<<i<<"\t";
+//        for(int j=0;j<5;j++)
+//            cout<<analy_list[i][j]<<" ";
+//        cout<<"\n";
+//    }
 }
 
 
 
-
-
+void exp::finalanaly(string toanaly)
+{
+    char analystack[20];
+    int statusstack[20];
+    int analystacktop=0;
+    int statusstacktop=0;
+    int toanalytop=0;
+    analystack[0]='#';
+    statusstack[0]=0;
+    ofstream out;
+    out.open("/Users/zhangalex/Desktop/git/demo2/3.txt");
+    out.setf(std::ios::left);
+    string successflag="unclear";
+    while(successflag!="ACC"&&successflag!="error")
+    {
+        int tempnum;
+        if(get_nindex(toanaly[toanalytop])!=-1)
+            tempnum=get_nindex(toanaly[toanalytop]);
+        else
+            tempnum=get_index(toanaly[toanalytop])+ter_copy.size();
+        if(analy_list[statusstack[statusstacktop]][tempnum]>0)
+        {
+            analystack[analystacktop+1]=toanaly[toanalytop];
+            statusstack[statusstacktop+1]=analy_list[statusstack[statusstacktop]][tempnum];
+            analystacktop++;
+            statusstacktop++;
+            toanalytop++;
+        }
+        else if(analy_list[statusstack[statusstacktop]][tempnum]<0&&analy_list[statusstack[statusstacktop]][tempnum]!=-999)
+        {
+            int tem=analy_str[-(analy_list[statusstack[statusstacktop]][tempnum])-1].right.size();
+            char temchar=analy_str[-(analy_list[statusstack[statusstacktop]][tempnum])-1].left;
+            analystacktop-=tem;
+            statusstacktop-=tem;
+            analystack[analystacktop+1]=temchar;
+            statusstack[statusstacktop+1]=analy_list[statusstack[statusstacktop]][get_index(temchar)+ter_copy.size()];
+            analystacktop++;
+            statusstacktop++;
+        }
+        else if(analy_list[statusstack[statusstacktop]][tempnum]==-999)
+        {
+            //        cout<<"ACC"<<"\n";
+            successflag="ACC";
+        }
+        else
+        {
+            //        cout<<"error"<<"\n";
+            successflag="error";
+        }
+        if(successflag!="ACC"&&successflag!="error")
+        {
+            int i;
+            for(i=0;i<=statusstacktop;i++)
+                cout<<statusstack[i]<<" ";
+            cout<<"\t";
+            for(i=0;i<=analystacktop;i++)
+                cout<<analystack[i];
+            cout<<"\t";
+            for(i=toanalytop;i<toanaly.length();i++)
+                cout<<toanaly[i];
+            cout<<"#";
+            cout<<"\n";
+        }
+    }
+    cout<<successflag<<"\n";
+    out.close();
+}

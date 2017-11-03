@@ -15,12 +15,17 @@ int main(int argc, const char * argv[])
     class exp a;
 //    class Base b;
 //    b.inputAndSolve();
-//    b.display();    
+//    b.display();
     a.inputAndSolve();
     a.preexcute();
     a.MainControl();
     a.display();
     a.lr1list();
+    a.listdisplay();
+    cout<<"test2"<<"\n";
+    string s;
+    cin>>s;
+    a.finalanaly(s);
     
     return 0;
 }

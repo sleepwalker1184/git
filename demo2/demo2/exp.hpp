@@ -20,13 +20,13 @@ struct lr1node
 struct listsign
 {
     char turnalpha[10];
-    int turninto[10]={0,0,0,0,0,0,0,0,0,0};
+    int turninto[10];
     int turnnum=0;
 };
 
 struct lr1set
 {
-    lr1node node[20];
+    lr1node node[30];
     int n=0;
     listsign Listsign;
 };
@@ -38,8 +38,10 @@ public:
     void display();
     void CLOSURE(lr1set &x);
     lr1set GOTO(lr1set &origin,char turn,int currentnum);
+    void finalanaly(string toanaly);
     void MainControl();
     void lr1list();
+    void listdisplay();
     int Judege(lr1set suspect,int currentsetnum);
     bool judgealpha(char x);
     bool judegturn(lr1set x,int n);
@@ -49,8 +51,8 @@ public:
     
 protected:
     lr1node analy_string[100];
-    lr1set analy_set[20];
-    int analy_list[20][20];
+    lr1set analy_set[30];
+    int analy_list[40][20];
 };
 
 #endif /* exp_hpp */

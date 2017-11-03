@@ -141,7 +141,7 @@ void Base::inputAndSolve()
 {
     string s;
     cout << "test" << endl;
-    cin >> T;
+    cin>>T;
     for (int index = 0; index<T; index++)
     {
         cin >> s;
