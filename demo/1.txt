@@ -1,0 +1,10 @@
+int main ( )
+{
+	If i = 0; 
+	then n ++ ; 
+	a <= 3b %  ; 1..2
+	int a = 3;    //aawdawdfawdawds
+	int b = 4;    //awdhioawhdiuawgdohawoudhauwd
+}
+
+#
