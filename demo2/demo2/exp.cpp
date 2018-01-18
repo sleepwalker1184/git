@@ -416,12 +416,11 @@ void exp::finalanaly(string toanaly)
         }
         else if(analy_list[statusstack[statusstacktop]][tempnum]==-999)
         {
-            //        cout<<"ACC"<<"\n";
+            
             successflag="ACC";
         }
         else
-        {
-            //        cout<<"error"<<"\n";
+        {            
             successflag="error";
         }
         if(successflag!="ACC"&&successflag!="error")
