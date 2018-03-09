@@ -332,23 +332,6 @@
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
-            condition = "l==0"
-            continueAfterRunningActions = "No"
-            filePath = "demo2/exp.cpp"
-            timestampString = "531220727.695063"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "exp::MainControl()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo2/exp.cpp"
             timestampString = "531220727.695811"
