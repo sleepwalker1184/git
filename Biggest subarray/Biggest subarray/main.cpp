@@ -11,10 +11,12 @@ using namespace std;
 
 int  crossing_subarray(int a[],int,int,int);
 int  findsubarray(int a[],int,int);
+int  enumerate_solution(int a[],int,int);
 
 int main(int argc, const char * argv[]) {
     int a[16]={13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
     cout<<findsubarray(a, 0, sizeof(a)/sizeof(a[0])-1)<<endl;
+    cout<<enumerate_solution(a,0,sizeof(a)/sizeof(a[0]))<<endl;
 }
 
 int  crossing_subarray(int a[],int low,int high,int mid)
@@ -62,6 +64,25 @@ int  findsubarray(int a[],int low,int high)
         else
             return cross_sum;
     }
+}
+int enumerate_solution(int a[],int low,int high)
+{
+    int max=-65535;
+    int sum=0;
+    for(int i=0;i<high;i++)
+    {
+        sum+=a[i];
+        if(sum>max)
+            max=sum;
+        for(int j=i+1;j<high;j++)
+        {
+            sum+=a[j];
+            if(sum>max)
+                max=sum;
+        }
+        sum=0;
+    }
+    return max;
 }
 
 
